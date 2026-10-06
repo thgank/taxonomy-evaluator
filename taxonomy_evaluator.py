@@ -39,6 +39,7 @@ def unit_number(value):
 def load_taxonomy(path):
     """Read a label edge list or taxonomy-builder's ID-based JSON/CSV export."""
     path = Path(path)
+    # ponytail: inputs stay in memory; stream edge lists if exports outgrow available RAM.
     raw = path.read_bytes()
     text = raw.decode("utf-8-sig")
     nodes, identifiers = set(), {}
