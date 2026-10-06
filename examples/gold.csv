@@ -1,0 +1,7 @@
+parent,child
+energy,renewable energy
+energy,energy storage
+renewable energy,solar energy
+renewable energy,wind energy
+energy storage,battery
+energy storage,thermal storage

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "tool_version": "1.0.0",
+  "python_version": "3.13.3",
+  "threshold": 0.0,
+  "normalization": "NFC + casefold + collapsed whitespace; directed exact-label matching",
+  "inputs": {
+    "predicted": {
+      "path": "examples/predicted.csv",
+      "sha256": "e2c40e7d23e9dee620693ac24f531109d7ffa0de70a14df75959bddf366cb5cb",
+      "edge_rows": 6,
+      "duplicate_rows": 0,
+      "unscored_rows": 0
+    },
+    "gold": {
+      "path": "examples/gold.csv",
+      "sha256": "976589812c2fc8c9f356d0e7519690a71e268aabba821ba465095919f1eb0915",
+      "edge_rows": 6,
+      "duplicate_rows": 0,
+      "unscored_rows": 6
+    }
+  },
+  "metrics": {
+    "true_positives": 5,
+    "false_positives": 1,
+    "false_negatives": 1,
+    "precision": 0.8333333333333334,
+    "recall": 0.8333333333333334,
+    "f1": 0.8333333333333334
+  },
+  "errors": {
+    "false_positive_edges": [
+      [
+        "energy",
+        "battery"
+      ]
+    ],
+    "false_negative_edges": [
+      [
+        "energy storage",
+        "thermal storage"
+      ]
+    ]
+  },
+  "predicted_graph": {
+    "node_count": 6,
+    "edge_count": 6,
+    "roots": [
+      "energy"
+    ],
+    "leaves": [
+      "battery",
+      "solar energy",
+      "wind energy"
+    ],
+    "isolated_nodes": [],
+    "multiple_parent_nodes": [
+      "battery"
+    ],
+    "component_count": 1,
+    "largest_component_ratio": 1.0,
+    "is_dag": true,
+    "cycle_example": [],
+    "max_depth": 2
+  },
+  "gold_graph": {
+    "node_count": 7,
+    "edge_count": 6,
+    "roots": [
+      "energy"
+    ],
+    "leaves": [
+      "battery",
+      "solar energy",
+      "thermal storage",
+      "wind energy"
+    ],
+    "isolated_nodes": [],
+    "multiple_parent_nodes": [],
+    "component_count": 1,
+    "largest_component_ratio": 1.0,
+    "is_dag": true,
+    "cycle_example": [],
+    "max_depth": 2
+  },
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "min_f1": null
+  }
+}

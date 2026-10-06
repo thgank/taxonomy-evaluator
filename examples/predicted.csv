@@ -1,0 +1,7 @@
+parent,child,score
+energy,renewable energy,0.95
+energy,energy storage,0.90
+renewable energy,solar energy,0.92
+renewable energy,wind energy,0.85
+energy storage,battery,0.80
+energy,battery,0.40
