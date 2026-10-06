@@ -1,5 +1,7 @@
 # Taxonomy Evaluator
 
+**Author:** Nursultan Serikov (group CSE-2501M).
+
 A small scientific command-line tool for evaluating generated taxonomies against an expert reference. Python 3.11+, standard library only; no installation or network connection is needed to run it.
 
 This is an independent companion to [taxonomy-builder](https://github.com/thgank/taxonomy-builder). That system generates and reviews taxonomies; this tool benchmarks exported parent-to-child relations against an external gold standard. All implementation and demonstration data here are original. The examples are **synthetic**, not dissertation results.

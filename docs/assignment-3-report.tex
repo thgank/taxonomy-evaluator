@@ -17,7 +17,7 @@
 \newcommand{\source}[1]{\textnormal{[#1]}}
 \newcommand{\link}[2]{\href{#1}{#2}}
 \newcommand{\code}[1]{\textnormal{#1}}
-\hypersetup{pdftitle={Assignment 3: Software Development and Integration},pdfauthor={thgank}}
+\hypersetup{pdftitle={Assignment 3: Software Development and Integration},pdfauthor={Nursultan Serikov (group CSE-2501M)}}
 \begin{document}
 
 \begin{center}
@@ -25,7 +25,7 @@
 \textbf{Software Development and Integration}\par
 \textbf{Taxonomy Evaluator: a reproducible scientific tool}\par
 Prepared for the scientific software development assignment\par
-GitHub author: thgank \hfill 6 October 2026
+Author: Nursultan Serikov (group CSE-2501M) \hfill 6 October 2026
 \end{center}
 
 \section{Purpose, scope, and deliverables}
@@ -210,7 +210,7 @@ The completed work turns a dissertation-related idea into a separate, bounded sc
 The main design challenge was avoiding duplication of evaluation already present in Taxonomy Builder. Source inspection identified external gold-standard comparison as a useful separate responsibility. Other challenges were ID-based exports, ambiguous normalized labels, undefined metrics, and longest-path depth in graphs with multiple parents. Explicit conventions and focused regression checks address these cases. The remaining scientific challenge is obtaining a defensible gold standard; software alone cannot solve it.
 
 \noindent\textbf{References and implementation evidence}\par
-\noindent [1] thgank. \textit{Taxonomy Builder}. \link{https://github.com/thgank/taxonomy-builder/tree/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc}{Inspected source revision adc387a5}. Sources include the \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/api-service/src/main/java/com/taxonomy/api/service/TaxonomyService.java}{API export service}, \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/api-service/src/main/java/com/taxonomy/api/dto/response/TaxonomyExportResponse.java}{export schema}, \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/worker-service/app/pipeline/evaluation.py}{worker evaluation}, and \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/.github/workflows/qa.yml}{QA workflow}.\par
+\noindent [1] Serikov, N. (thgank). \textit{Taxonomy Builder}. \link{https://github.com/thgank/taxonomy-builder/tree/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc}{Inspected source revision adc387a5}. Sources include the \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/api-service/src/main/java/com/taxonomy/api/service/TaxonomyService.java}{API export service}, \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/api-service/src/main/java/com/taxonomy/api/dto/response/TaxonomyExportResponse.java}{export schema}, \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/worker-service/app/pipeline/evaluation.py}{worker evaluation}, and \link{https://github.com/thgank/taxonomy-builder/blob/adc387a5d227bf3ebb9c79a3fa0429415fe8b9cc/.github/workflows/qa.yml}{QA workflow}.\par
 \noindent [2] Chacon, S., and Straub, B. \textit{Pro Git}, section 1.1: About Version Control. \link{https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control}{Official Git book}.\par
 \noindent [3] GitHub. \textit{Understanding GitHub Actions}. \link{https://docs.github.com/en/actions/get-started/understand-github-actions}{Official workflow documentation}.\par
 \noindent [4] Python Software Foundation. \textit{graphlib: Functionality to operate with graph-like structures}. \link{https://docs.python.org/3/library/graphlib.html}{Python documentation}.\par
