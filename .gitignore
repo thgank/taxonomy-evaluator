@@ -6,3 +6,5 @@ tmp/
 *.log
 *.out
 *.zip
+.DS_Store
+!assignment5/evidence/**/*.log

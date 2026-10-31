@@ -57,7 +57,33 @@ The tool keeps inputs and graphs in memory. It is intended for small and medium 
 
 [Public repository](https://github.com/thgank/taxonomy-evaluator) · [CI/CD configuration](https://github.com/thgank/taxonomy-evaluator/blob/main/.github/workflows/ci.yml) · [Actions runs](https://github.com/thgank/taxonomy-evaluator/actions) · [Issues](https://github.com/thgank/taxonomy-evaluator/issues)
 
-The workflow tests Python 3.11, 3.13, and 3.14 on pushes and pull requests. A delivery job depends on all test jobs, checks the synthetic F1 gate, and uploads a runnable ZIP plus its evaluation JSON. This implements delivery of a validated scientific tool; server deployment is unnecessary. Artifacts are downloadable from successful Actions runs and retained for 30 days.
+The workflow tests Python 3.11, 3.13, and 3.14 on pushes to every branch and on pull requests; manual dispatch is also supported. A delivery job depends on all test jobs, builds a revision-tagged Docker image, and checks the synthetic benchmark inside it. It uploads a runnable source ZIP, a Docker image archive, evaluation JSON, and execution evidence, retained for 30 days. Failed tests or container checks prevent delivery. Diagnostic logs are uploaded even on failure. This implements continuous delivery; automatic server deployment is not configured.
+
+## Docker and Assignment 5
+
+The image pins Python 3.13.18 (Debian Bookworm slim) and its verified multi-platform index digest. It contains only the evaluator and license, runs as an unprivileged user, and needs no runtime network or third-party Python packages. Input files and results remain outside the image. Update the base pin deliberately when security fixes are needed, then rerun CI.
+
+From the repository root with a working Docker daemon:
+
+```sh
+docker build --pull -t taxonomy-evaluator:local .
+mkdir -p results
+docker run --rm --network=none --read-only \
+  --user "$(id -u):$(id -g)" \
+  --mount "type=bind,src=$PWD/examples,dst=/data,readonly" \
+  --mount "type=bind,src=$PWD/results,dst=/results" \
+  taxonomy-evaluator:local /data/predicted.csv /data/gold.csv \
+  --threshold 0.5 --min-f1 0.9 --output /results/evaluation.json
+python3 scripts/check_container.py taxonomy-evaluator:local results/checks
+```
+
+The UID/GID override gives the container the invoking user's write permissions on the output directory. The check script verifies the original and filtered metrics, input hashes, byte-identical repeated reports, mounted output, a failing F1 gate (exit 1), invalid arguments and protected inputs (exit 2). It runs on POSIX hosts with a local Docker daemon; bind paths must exist on the daemon host.
+
+GitHub Actions performs the real Docker build and runtime checks on Linux amd64. The local macOS arm64 host could run the Python tests, but its Docker Desktop installation could not start; no local arm64 container result is claimed. The base image supports multiple architectures, which does not establish application verification on all of them.
+
+Download the delivery artifact from a successful run, verify the archive checksums against its evidence artifact, then load the image with `docker load -i taxonomy-evaluator-image.tar.gz`. Its tag contains the tested Git SHA. Use that tag in place of `taxonomy-evaluator:local` above. The image is delivered without requiring a public registry.
+
+Assignment 5 uses **GitHub Actions** as requested. The versioned pipeline is `.github/workflows/ci.yml`. Push events validate the pushed branch tip; several commits in one push do not imply a separate run for every intermediate SHA. AS6 is outside this submission. Optional deployment to a test server or Kubernetes is not implemented.
 
 Use short feature branches and focused commits; explain scientific behavior changes in a pull request and run the same local test command before merging. Issue templates cover bugs and research tasks. The MIT license permits reuse.
 

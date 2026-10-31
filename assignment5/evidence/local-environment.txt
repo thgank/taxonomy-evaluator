@@ -1,0 +1,12 @@
+Recorded 2026-11-03, Asia/Almaty
+Host: macOS 26.2 (25C56), arm64
+Python: 3.13.3
+Git: 2.50.1 (Apple Git-155)
+Docker client: 28.0.1, API 1.48, darwin/arm64
+Docker context: desktop-linux
+Docker Compose: v2.33.1-desktop.1
+Docker daemon: unavailable at unix:///Users/tslnkk/.docker/run/docker.sock
+Docker Desktop launch: failed with NSOSStatusErrorDomain -10827 kLSNoExecutableErr
+Local Docker build/runtime: NOT RUN
+Local baseline: cdea93a4a96d9743d1d24cba0763b5a61e7dca36, 5 tests passed
+Container verification is performed separately on the GitHub-hosted Linux runner.

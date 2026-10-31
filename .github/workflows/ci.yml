@@ -1,8 +1,7 @@
-name: Test and deliver
+name: Test, build and deliver
 
 on:
   push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -12,6 +11,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     strategy:
       matrix:
         python-version: ['3.11', '3.13', '3.14']
@@ -21,24 +21,71 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run scientific regression checks
-        run: python -m unittest -v
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -c 'import unittest; n = unittest.defaultTestLoader.discover(".").countTestCases(); print(f"Discovered {n} tests"); assert n > 0'
+          python -m unittest -v 2>&1 | tee tests.txt
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: tests-${{ matrix.python-version }}-${{ github.sha }}
+          path: tests.txt
+          if-no-files-found: error
+          retention-days: 30
 
   deliver:
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.13'
-      - name: Evaluate the demonstration benchmark
-        run: python taxonomy_evaluator.py examples/predicted.csv examples/gold.csv --threshold 0.5 --min-f1 0.9 --output evaluation.json
+      - name: Record revision and environment
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          git rev-parse HEAD | tee evidence/commit.txt
+          printf 'event=%s\nref=%s\nrun=%s\nattempt=%s\n' "$GITHUB_EVENT_NAME" "$GITHUB_REF" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > evidence/run.txt
+          uname -sm > evidence/host.txt
+          cat /etc/os-release >> evidence/host.txt
+          python --version >> evidence/host.txt
+          docker version > evidence/docker-version.txt
+      - name: Build the revision-tagged Docker image
+        run: |
+          set -euo pipefail
+          docker build --pull --progress=plain --label "org.opencontainers.image.revision=$GITHUB_SHA" -t "taxonomy-evaluator:$GITHUB_SHA" . 2>&1 | tee evidence/build.txt
+          docker image inspect "taxonomy-evaluator:$GITHUB_SHA" > evidence/image.json
+      - name: Check offline container benchmark and failure gates
+        run: |
+          set -euo pipefail
+          python scripts/check_container.py "taxonomy-evaluator:$GITHUB_SHA" evidence 2>&1 | tee evidence/container-checks.txt
+          cp evidence/evaluation.json evaluation.json
       - name: Bundle the runnable tool
-        run: python -m zipfile -c taxonomy-evaluator.zip taxonomy_evaluator.py test_taxonomy_evaluator.py README.md LICENSE examples evaluation.json
+        run: |
+          set -euo pipefail
+          python -m zipfile -c taxonomy-evaluator.zip taxonomy_evaluator.py test_taxonomy_evaluator.py README.md LICENSE examples evaluation.json Dockerfile .dockerignore scripts .github/workflows/ci.yml
+          docker save "taxonomy-evaluator:$GITHUB_SHA" | gzip > taxonomy-evaluator-image.tar.gz
+          sha256sum taxonomy-evaluator.zip taxonomy-evaluator-image.tar.gz > evidence/SHA256SUMS
+          printf 'Validated revision: `%s`\n\nSynthetic benchmark: TP=5, FP=0, FN=1; precision=1; recall=5/6; F1=10/11.\n\nOffline container checks and exit codes 0/1/2 passed. Image and source delivered as artifacts; no server deployment.\n' "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: evidence-${{ github.sha }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 30
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: taxonomy-evaluator-${{ github.sha }}
           path: |
             taxonomy-evaluator.zip
             evaluation.json
+            taxonomy-evaluator-image.tar.gz
+          if-no-files-found: error
           retention-days: 30
