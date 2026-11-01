@@ -85,6 +85,8 @@ Download the delivery artifact from a successful run, verify the archive checksu
 
 Assignment 5 uses **GitHub Actions** as requested. The versioned pipeline is `.github/workflows/ci.yml`. Push events validate the pushed branch tip; several commits in one push do not imply a separate run for every intermediate SHA. AS6 is outside this submission. Optional deployment to a test server or Kubernetes is not implemented.
 
+To reproduce the failure gate, run the same container command without `--threshold 0.5` and with `--min-f1 0.9`: it returns exit code 1 and records F1 = 5/6. Keep the output mount writable; an unwritable destination is an I/O error (exit 2), not a scientific failure. Check a run's event is `push` and its checkout SHA matches your published revision when verifying automatic triggering.
+
 Use short feature branches and focused commits; explain scientific behavior changes in a pull request and run the same local test command before merging. Issue templates cover bugs and research tasks. The MIT license permits reuse.
 
 The 10-page assignment report is [output/pdf/assignment-3-report.pdf](output/pdf/assignment-3-report.pdf); its editable source is [docs/assignment-3-report.tex](docs/assignment-3-report.tex). It uses Times New Roman, 12 pt, 1.5 spacing, and justified body text. Rebuild on macOS with Times New Roman installed:
