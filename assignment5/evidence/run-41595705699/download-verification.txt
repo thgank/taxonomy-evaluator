@@ -1,0 +1,6 @@
+Verified 2026-11-03
+Revision: 11d715859e23bd67b5515139f5306586e6de8302
+PASS: CI source and image archive SHA-256
+PASS: every source ZIP member matches git revision, including .github/workflows/ci.yml
+PASS: image revision label matches checkout
+PASS: repeated JSON bytes are identical

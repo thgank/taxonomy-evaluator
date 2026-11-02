@@ -1,0 +1,358 @@
+﻿2026-11-03T07:21:04.4380810Z Current runner version: '2.338.2'
+2026-11-03T07:21:04.4418061Z ##[group]Runner Image Provisioner
+2026-11-03T07:21:04.4419487Z Hosted Compute Agent
+2026-11-03T07:21:04.4420865Z Version: 20261021.618
+2026-11-03T07:21:04.4421882Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-03T07:21:04.4423275Z Build Date: 2026-10-21T00:45:21Z
+2026-11-03T07:21:04.4424467Z Worker ID: {534d7e4b-b8d8-4d5b-a786-0ceb185ff8dd}
+2026-11-03T07:21:04.4425972Z Region: eastus
+2026-11-03T07:21:04.4426944Z Cloud: Azure
+2026-11-03T07:21:04.4427812Z ##[endgroup]
+2026-11-03T07:21:04.4430977Z ##[group]Operating System
+2026-11-03T07:21:04.4432081Z Ubuntu
+2026-11-03T07:21:04.4432992Z 26.04.1
+2026-11-03T07:21:04.4433898Z LTS
+2026-11-03T07:21:04.4435003Z ##[endgroup]
+2026-11-03T07:21:04.4436069Z ##[group]Runner Image
+2026-11-03T07:21:04.4437056Z Image: ubuntu-26.04
+2026-11-03T07:21:04.4438132Z Version: 20261025.179.1
+2026-11-03T07:21:04.4440641Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-03T07:21:04.4443481Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+2026-11-03T07:21:04.4445413Z ##[endgroup]
+2026-11-03T07:21:04.4447532Z ##[group]GITHUB_TOKEN Permissions
+2026-11-03T07:21:04.4450682Z Contents: read
+2026-11-03T07:21:04.4451842Z Metadata: read
+2026-11-03T07:21:04.4452850Z ##[endgroup]
+2026-11-03T07:21:04.4456647Z Secret source: Actions
+2026-11-03T07:21:04.4458114Z Cache mode: write
+2026-11-03T07:21:04.4460074Z Prepare workflow directory
+2026-11-03T07:21:04.5052269Z Prepare all required actions
+2026-11-03T07:21:04.5101861Z Getting action download info
+2026-11-03T07:21:04.6622915Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-03T07:21:04.7900640Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-11-03T07:21:04.8513782Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-11-03T07:21:05.0327914Z Complete job name: deliver
+2026-11-03T07:21:05.1253641Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-03T07:21:05.1254741Z with:
+2026-11-03T07:21:05.1255277Z   repository: thgank/taxonomy-evaluator
+2026-11-03T07:21:05.1259221Z   token: ***
+2026-11-03T07:21:05.1259659Z   ssh-strict: true
+2026-11-03T07:21:05.1260320Z   ssh-user: git
+2026-11-03T07:21:05.1260766Z   persist-credentials: true
+2026-11-03T07:21:05.1261256Z   clean: true
+2026-11-03T07:21:05.1261698Z   sparse-checkout-cone-mode: true
+2026-11-03T07:21:05.1262219Z   fetch-depth: 1
+2026-11-03T07:21:05.1262647Z   fetch-tags: false
+2026-11-03T07:21:05.1263090Z   show-progress: true
+2026-11-03T07:21:05.1263540Z   lfs: false
+2026-11-03T07:21:05.1263945Z   submodules: false
+2026-11-03T07:21:05.1264398Z   set-safe-directory: true
+2026-11-03T07:21:05.1264898Z   allow-unsafe-pr-checkout: false
+2026-11-03T07:21:05.1265868Z ##[endgroup]
+2026-11-03T07:21:05.4171579Z Syncing repository: thgank/taxonomy-evaluator
+2026-11-03T07:21:05.4173984Z ##[group]Getting Git version info
+2026-11-03T07:21:05.4175655Z Working directory is '/home/runner/work/taxonomy-evaluator/taxonomy-evaluator'
+2026-11-03T07:21:05.4177211Z [command]/usr/bin/git version
+2026-11-03T07:21:05.4224440Z git version 2.56.0
+2026-11-03T07:21:05.4259305Z ##[endgroup]
+2026-11-03T07:21:05.4282701Z Temporarily overriding HOME='/home/runner/work/_temp/475052f7-6b42-406a-9c9a-6fff91b73758' before making global git config changes
+2026-11-03T07:21:05.4285954Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-03T07:21:05.4289047Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/taxonomy-evaluator/taxonomy-evaluator
+2026-11-03T07:21:05.4379264Z Deleting the contents of '/home/runner/work/taxonomy-evaluator/taxonomy-evaluator'
+2026-11-03T07:21:05.4383662Z ##[group]Determining repository object format
+2026-11-03T07:21:05.4386020Z ##[endgroup]
+2026-11-03T07:21:05.4387704Z ##[group]Initializing the repository
+2026-11-03T07:21:05.4392924Z [command]/usr/bin/git init /home/runner/work/taxonomy-evaluator/taxonomy-evaluator
+2026-11-03T07:21:05.4561737Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-03T07:21:05.4564124Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-03T07:21:05.4566132Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-03T07:21:05.4567677Z hint: call:
+2026-11-03T07:21:05.4568686Z hint:
+2026-11-03T07:21:05.4570130Z hint: 	git config --global init.defaultBranch <name>
+2026-11-03T07:21:05.4571457Z hint:
+2026-11-03T07:21:05.4572782Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-03T07:21:05.4574715Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-03T07:21:05.4576417Z hint:
+2026-11-03T07:21:05.4577625Z hint: 	git branch -m <name>
+2026-11-03T07:21:05.4578677Z hint:
+2026-11-03T07:21:05.4580201Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-03T07:21:05.4611949Z Initialized empty Git repository in /home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git/
+2026-11-03T07:21:05.4615545Z [command]/usr/bin/git remote add origin https://github.com/thgank/taxonomy-evaluator
+2026-11-03T07:21:05.4675916Z ##[endgroup]
+2026-11-03T07:21:05.4677611Z ##[group]Disabling automatic garbage collection
+2026-11-03T07:21:05.4682861Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-03T07:21:05.4739361Z ##[endgroup]
+2026-11-03T07:21:05.4741350Z ##[group]Setting up auth
+2026-11-03T07:21:05.4742548Z Removing SSH command configuration
+2026-11-03T07:21:05.4748772Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-03T07:21:05.4828310Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-03T07:21:05.5385900Z Removing HTTP extra header
+2026-11-03T07:21:05.5392986Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-03T07:21:05.5431625Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-03T07:21:05.5710430Z Removing includeIf entries pointing to credentials config files
+2026-11-03T07:21:05.5715639Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-03T07:21:05.5763570Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-03T07:21:05.6054471Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-03T07:21:05.6097080Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git.path /home/runner/work/_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:05.6130843Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:05.6168605Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:05.6202617Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:05.6235450Z ##[endgroup]
+2026-11-03T07:21:05.6237522Z ##[group]Fetching the repository
+2026-11-03T07:21:05.6244761Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +11d715859e23bd67b5515139f5306586e6de8302:refs/remotes/origin/assignment5-github-actions
+2026-11-03T07:21:05.8237908Z From https://github.com/thgank/taxonomy-evaluator
+2026-11-03T07:21:05.8240927Z  * [new ref]         11d715859e23bd67b5515139f5306586e6de8302 -> origin/assignment5-github-actions
+2026-11-03T07:21:05.8248872Z [command]/usr/bin/git branch --list --remote origin/assignment5-github-actions
+2026-11-03T07:21:05.8277710Z   origin/assignment5-github-actions
+2026-11-03T07:21:05.8286893Z [command]/usr/bin/git rev-parse refs/remotes/origin/assignment5-github-actions
+2026-11-03T07:21:05.8311515Z 11d715859e23bd67b5515139f5306586e6de8302
+2026-11-03T07:21:05.8316465Z ##[endgroup]
+2026-11-03T07:21:05.8317733Z ##[group]Determining the checkout info
+2026-11-03T07:21:05.8319280Z ##[endgroup]
+2026-11-03T07:21:05.8322552Z [command]/usr/bin/git sparse-checkout disable
+2026-11-03T07:21:05.8375995Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-03T07:21:05.8410027Z ##[group]Checking out the ref
+2026-11-03T07:21:05.8416126Z [command]/usr/bin/git checkout --progress --force -B assignment5-github-actions refs/remotes/origin/assignment5-github-actions
+2026-11-03T07:21:05.8497600Z Switched to a new branch 'assignment5-github-actions'
+2026-11-03T07:21:05.8503864Z branch 'assignment5-github-actions' set up to track 'origin/assignment5-github-actions'.
+2026-11-03T07:21:05.8511552Z ##[endgroup]
+2026-11-03T07:21:05.8571246Z [command]/usr/bin/git log -1 --format=%H
+2026-11-03T07:21:05.8598574Z 11d715859e23bd67b5515139f5306586e6de8302
+2026-11-03T07:21:05.9086424Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-11-03T07:21:05.9088240Z with:
+2026-11-03T07:21:05.9089134Z   python-version: 3.13
+2026-11-03T07:21:05.9090503Z   check-latest: false
+2026-11-03T07:21:05.9101112Z   token: ***
+2026-11-03T07:21:05.9102112Z   update-environment: true
+2026-11-03T07:21:05.9103235Z   allow-prereleases: false
+2026-11-03T07:21:05.9104328Z   freethreaded: false
+2026-11-03T07:21:05.9105319Z ##[endgroup]
+2026-11-03T07:21:06.0441151Z ##[group]Installed versions
+2026-11-03T07:21:06.0568889Z Successfully set up CPython (3.13.17)
+2026-11-03T07:21:06.0571576Z ##[endgroup]
+2026-11-03T07:21:06.0819234Z ##[group]Run set -euo pipefail
+2026-11-03T07:21:06.0821496Z set -euo pipefail
+2026-11-03T07:21:06.0823277Z mkdir -p evidence
+2026-11-03T07:21:06.0825309Z git rev-parse HEAD | tee evidence/commit.txt
+2026-11-03T07:21:06.0829582Z printf 'event=%s\nref=%s\nrun=%s\nattempt=%s\n' "$GITHUB_EVENT_NAME" "$GITHUB_REF" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > evidence/run.txt
+2026-11-03T07:21:06.0833882Z uname -sm > evidence/host.txt
+2026-11-03T07:21:06.0835934Z cat /etc/os-release >> evidence/host.txt
+2026-11-03T07:21:06.0838333Z python --version >> evidence/host.txt
+2026-11-03T07:21:06.0841023Z docker version > evidence/docker-version.txt
+2026-11-03T07:21:06.0918610Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-03T07:21:06.0920415Z env:
+2026-11-03T07:21:06.0921545Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.0923497Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+2026-11-03T07:21:06.0925333Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.0927010Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.0928681Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.0930719Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+2026-11-03T07:21:06.0932187Z ##[endgroup]
+2026-11-03T07:21:06.1101823Z 11d715859e23bd67b5515139f5306586e6de8302
+2026-11-03T07:21:06.2382166Z ##[group]Run set -euo pipefail
+2026-11-03T07:21:06.2383375Z set -euo pipefail
+2026-11-03T07:21:06.2386216Z docker build --pull --progress=plain --label "org.opencontainers.image.revision=$GITHUB_SHA" -t "taxonomy-evaluator:$GITHUB_SHA" . 2>&1 | tee evidence/build.txt
+2026-11-03T07:21:06.2390330Z docker image inspect "taxonomy-evaluator:$GITHUB_SHA" > evidence/image.json
+2026-11-03T07:21:06.2424241Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-03T07:21:06.2425634Z env:
+2026-11-03T07:21:06.2426698Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.2428495Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+2026-11-03T07:21:06.2430640Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.2432272Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.2433915Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:06.2435618Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+2026-11-03T07:21:06.2437029Z ##[endgroup]
+2026-11-03T07:21:06.8610306Z #0 building with "default" instance using docker driver
+2026-11-03T07:21:06.8611700Z
+2026-11-03T07:21:06.8612758Z #1 [internal] load build definition from Dockerfile
+2026-11-03T07:21:06.8614742Z #1 transferring dockerfile: 330B done
+2026-11-03T07:21:06.8616261Z #1 DONE 0.0s
+2026-11-03T07:21:06.8616834Z
+2026-11-03T07:21:06.8617791Z #2 [auth] library/python:pull token for registry-1.docker.io
+2026-11-03T07:21:06.8619627Z #2 DONE 0.0s
+2026-11-03T07:21:06.8620348Z
+2026-11-03T07:21:06.8622708Z #3 [internal] load metadata for docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+2026-11-03T07:21:07.0091407Z #3 DONE 0.3s
+2026-11-03T07:21:07.1541492Z
+2026-11-03T07:21:07.1542420Z #4 [internal] load .dockerignore
+2026-11-03T07:21:07.1543120Z #4 transferring context: 102B done
+2026-11-03T07:21:07.1544036Z #4 DONE 0.0s
+2026-11-03T07:21:07.1544796Z
+2026-11-03T07:21:07.1545438Z #5 [internal] load build context
+2026-11-03T07:21:07.1546699Z #5 transferring context: 10.69kB done
+2026-11-03T07:21:07.1547663Z #5 DONE 0.0s
+2026-11-03T07:21:07.1548268Z
+2026-11-03T07:21:07.1549663Z #6 [1/3] FROM docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+2026-11-03T07:21:07.1552045Z #6 resolve docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f 0.0s done
+2026-11-03T07:21:07.1553949Z #6 sha256:7e143ada11afde237a069ca6ba1887c691cf44e992e77da323c9139f47b8acd2 251B / 251B 0.0s done
+2026-11-03T07:21:07.1555708Z #6 sha256:6826f8529239b0ebfe5dd429a795c8c4989724db6ae9059fa9f03dda8c31f8f5 3.34MB / 3.34MB 0.1s done
+2026-11-03T07:21:07.3964333Z #6 sha256:2ed7a1a27c6d053227e15859d704914451dfa1f77792489b54ecc64103fe9db7 12.61MB / 12.61MB 0.1s done
+2026-11-03T07:21:07.3966518Z #6 sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 28.25MB / 28.25MB 0.2s done
+2026-11-03T07:21:07.3968168Z #6 extracting sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc
+2026-11-03T07:21:08.0222854Z #6 extracting sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 0.8s done
+2026-11-03T07:21:08.0224111Z #6 DONE 1.0s
+2026-11-03T07:21:08.2649600Z
+2026-11-03T07:21:08.2650992Z #6 [1/3] FROM docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+2026-11-03T07:21:08.2652399Z #6 extracting sha256:6826f8529239b0ebfe5dd429a795c8c4989724db6ae9059fa9f03dda8c31f8f5 0.1s done
+2026-11-03T07:21:08.2653480Z #6 extracting sha256:2ed7a1a27c6d053227e15859d704914451dfa1f77792489b54ecc64103fe9db7
+2026-11-03T07:21:08.4609482Z #6 extracting sha256:2ed7a1a27c6d053227e15859d704914451dfa1f77792489b54ecc64103fe9db7 0.3s done
+2026-11-03T07:21:08.4610775Z #6 DONE 1.4s
+2026-11-03T07:21:08.6196418Z
+2026-11-03T07:21:08.6198260Z #6 [1/3] FROM docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+2026-11-03T07:21:08.6199976Z #6 extracting sha256:7e143ada11afde237a069ca6ba1887c691cf44e992e77da323c9139f47b8acd2 done
+2026-11-03T07:21:08.6200915Z #6 DONE 1.4s
+2026-11-03T07:21:08.6201099Z
+2026-11-03T07:21:08.6201231Z #7 [2/3] WORKDIR /app
+2026-11-03T07:21:08.6961512Z #7 DONE 0.2s
+2026-11-03T07:21:08.8102142Z
+2026-11-03T07:21:08.8103028Z #8 [3/3] COPY taxonomy_evaluator.py LICENSE ./
+2026-11-03T07:21:08.8103676Z #8 DONE 0.0s
+2026-11-03T07:21:08.8103917Z
+2026-11-03T07:21:08.8104100Z #9 exporting to image
+2026-11-03T07:21:08.8104552Z #9 exporting layers 0.0s done
+2026-11-03T07:21:08.8105550Z #9 exporting manifest sha256:2c5c957ebeb9be116d003af1a1ccc620ade7e092978cffe4b377979e5d7c6736 done
+2026-11-03T07:21:08.8106890Z #9 exporting config sha256:4672d34b91b684a185eb835634dcae2fa10f1b73b48cd0d95cd3e8af95991dac done
+2026-11-03T07:21:08.8108365Z #9 exporting attestation manifest sha256:edab9c8466db2d8cc02775218e213b94a0c33aca3d3a1e8baaa4905882ec86f7 done
+2026-11-03T07:21:08.8110064Z #9 exporting manifest list sha256:32d752c800363c929a75decbad39529bc8b3e541534251aa932d9407606c5d80 done
+2026-11-03T07:21:08.8111238Z #9 naming to docker.io/library/taxonomy-evaluator:11d715859e23bd67b5515139f5306586e6de8302 done
+2026-11-03T07:21:08.8112486Z #9 unpacking to docker.io/library/taxonomy-evaluator:11d715859e23bd67b5515139f5306586e6de8302 0.0s done
+2026-11-03T07:21:08.8113411Z #9 DONE 0.1s
+2026-11-03T07:21:08.9058176Z ##[group]Run set -euo pipefail
+2026-11-03T07:21:08.9058540Z set -euo pipefail
+2026-11-03T07:21:08.9059116Z python scripts/check_container.py "taxonomy-evaluator:$GITHUB_SHA" evidence 2>&1 | tee evidence/container-checks.txt
+2026-11-03T07:21:08.9060030Z cp evidence/evaluation.json evaluation.json
+2026-11-03T07:21:08.9093448Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-03T07:21:08.9093814Z env:
+2026-11-03T07:21:08.9094101Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:08.9094557Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+2026-11-03T07:21:08.9095021Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:08.9095415Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:08.9095807Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:08.9096236Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+2026-11-03T07:21:08.9096566Z ##[endgroup]
+2026-11-03T07:21:09.4162208Z baseline: exit 0 (expected 0)
+2026-11-03T07:21:09.7690967Z filtered: exit 0 (expected 0)
+2026-11-03T07:21:10.1257857Z repeat: exit 0 (expected 0)
+2026-11-03T07:21:10.4700587Z failed-gate: exit 1 (expected 1)
+2026-11-03T07:21:10.8115831Z invalid-input: exit 2 (expected 2)
+2026-11-03T07:21:11.1675494Z protect-input: exit 2 (expected 2)
+2026-11-03T07:21:11.1676942Z PASS: counts, precision/recall/F1, hashes, mounted output, byte repeatability, exits 0/1/2
+2026-11-03T07:21:11.1811996Z ##[group]Run set -euo pipefail
+2026-11-03T07:21:11.1812331Z set -euo pipefail
+2026-11-03T07:21:11.1813090Z python -m zipfile -c taxonomy-evaluator.zip taxonomy_evaluator.py test_taxonomy_evaluator.py README.md LICENSE examples evaluation.json Dockerfile .dockerignore scripts .github
+2026-11-03T07:21:11.1814079Z docker save "taxonomy-evaluator:$GITHUB_SHA" | gzip > taxonomy-evaluator-image.tar.gz
+2026-11-03T07:21:11.1814728Z sha256sum taxonomy-evaluator.zip taxonomy-evaluator-image.tar.gz > evidence/SHA256SUMS
+2026-11-03T07:21:11.1815959Z printf 'Validated revision: `%s`\n\nSynthetic benchmark: TP=5, FP=0, FN=1; precision=1; recall=5/6; F1=10/11.\n\nOffline container checks and exit codes 0/1/2 passed. Image and source delivered as artifacts; no server deployment.\n' "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+2026-11-03T07:21:11.1848228Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-03T07:21:11.1848573Z env:
+2026-11-03T07:21:11.1848887Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:11.1849340Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+2026-11-03T07:21:11.1850509Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:11.1850909Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:11.1851304Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:11.1851706Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+2026-11-03T07:21:11.1852044Z ##[endgroup]
+2026-11-03T07:21:12.9016475Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-11-03T07:21:12.9016897Z with:
+2026-11-03T07:21:12.9017157Z   name: evidence-11d715859e23bd67b5515139f5306586e6de8302
+2026-11-03T07:21:12.9017480Z   path: evidence/
+2026-11-03T07:21:12.9017692Z   if-no-files-found: error
+2026-11-03T07:21:12.9017923Z   retention-days: 30
+2026-11-03T07:21:12.9018142Z   compression-level: 6
+2026-11-03T07:21:12.9018354Z   overwrite: false
+2026-11-03T07:21:12.9018571Z   include-hidden-files: false
+2026-11-03T07:21:12.9018812Z   archive: true
+2026-11-03T07:21:12.9019015Z env:
+2026-11-03T07:21:12.9019277Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:12.9019980Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+2026-11-03T07:21:12.9020463Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:12.9020871Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:12.9021302Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:12.9021698Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+2026-11-03T07:21:12.9022027Z ##[endgroup]
+2026-11-03T07:21:13.0620992Z With the provided path, there will be 22 files uploaded
+2026-11-03T07:21:13.0621900Z Artifact name is valid!
+2026-11-03T07:21:13.0622297Z Root directory input is valid!
+2026-11-03T07:21:13.2856357Z Uploading artifact: evidence-11d715859e23bd67b5515139f5306586e6de8302.zip
+2026-11-03T07:21:13.2897796Z Beginning upload of artifact content to blob storage
+2026-11-03T07:21:13.3814203Z Uploaded bytes 8424
+2026-11-03T07:21:13.3946384Z Finished uploading artifact content to blob storage!
+2026-11-03T07:21:13.3947596Z SHA256 digest of uploaded artifact is 22b85a8a352a0e259fbdc8db0aded391a99cceddb87363bc2e23eb5b11971075
+2026-11-03T07:21:13.3948672Z Finalizing artifact upload
+2026-11-03T07:21:13.8421120Z Artifact evidence-11d715859e23bd67b5515139f5306586e6de8302 successfully finalized. Artifact ID 13212236545
+2026-11-03T07:21:13.8422844Z Artifact evidence-11d715859e23bd67b5515139f5306586e6de8302 has been successfully uploaded! Final size is 8424 bytes. Artifact ID is 13212236545
+2026-11-03T07:21:13.8424591Z Artifact download URL: https://github.com/thgank/taxonomy-evaluator/actions/runs/41595705699/artifacts/13212236545
+2026-11-03T07:21:13.8581402Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-11-03T07:21:13.8581849Z with:
+2026-11-03T07:21:13.8582155Z   name: taxonomy-evaluator-11d715859e23bd67b5515139f5306586e6de8302
+2026-11-03T07:21:13.8582683Z   path: taxonomy-evaluator.zip
+evaluation.json
+taxonomy-evaluator-image.tar.gz
+
+2026-11-03T07:21:13.8583150Z   if-no-files-found: error
+2026-11-03T07:21:13.8583399Z   retention-days: 30
+2026-11-03T07:21:13.8583621Z   compression-level: 6
+2026-11-03T07:21:13.8583843Z   overwrite: false
+2026-11-03T07:21:13.8584069Z   include-hidden-files: false
+2026-11-03T07:21:13.8584312Z   archive: true
+2026-11-03T07:21:13.8584515Z env:
+2026-11-03T07:21:13.8584776Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:13.8585221Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+2026-11-03T07:21:13.8585662Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:13.8586097Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:13.8586502Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+2026-11-03T07:21:13.8586899Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+2026-11-03T07:21:13.8587232Z ##[endgroup]
+2026-11-03T07:21:14.0132952Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-03T07:21:14.0136075Z The least common ancestor is /home/runner/work/taxonomy-evaluator/taxonomy-evaluator. This will be the root directory of the artifact
+2026-11-03T07:21:14.0137602Z With the provided path, there will be 3 files uploaded
+2026-11-03T07:21:14.0139054Z Artifact name is valid!
+2026-11-03T07:21:14.0140037Z Root directory input is valid!
+2026-11-03T07:21:14.1960077Z Uploading artifact: taxonomy-evaluator-11d715859e23bd67b5515139f5306586e6de8302.zip
+2026-11-03T07:21:14.2001552Z Beginning upload of artifact content to blob storage
+2026-11-03T07:21:14.6347398Z Uploaded bytes 8388608
+2026-11-03T07:21:14.9417353Z Uploaded bytes 16777216
+2026-11-03T07:21:15.1512640Z Uploaded bytes 25165824
+2026-11-03T07:21:15.3741301Z Uploaded bytes 33554432
+2026-11-03T07:21:15.7045816Z Uploaded bytes 41943040
+2026-11-03T07:21:15.7434836Z Uploaded bytes 43861734
+2026-11-03T07:21:15.7572012Z Finished uploading artifact content to blob storage!
+2026-11-03T07:21:15.7583872Z SHA256 digest of uploaded artifact is 2dd866c2bf1d8941a8db2612e314e6e318132a2e4eddcdaad773c7fd8227a938
+2026-11-03T07:21:15.7585765Z Finalizing artifact upload
+2026-11-03T07:21:16.2243585Z Artifact taxonomy-evaluator-11d715859e23bd67b5515139f5306586e6de8302 successfully finalized. Artifact ID 13212610870
+2026-11-03T07:21:16.2244924Z Artifact taxonomy-evaluator-11d715859e23bd67b5515139f5306586e6de8302 has been successfully uploaded! Final size is 43861734 bytes. Artifact ID is 13212610870
+2026-11-03T07:21:16.2250481Z Artifact download URL: https://github.com/thgank/taxonomy-evaluator/actions/runs/41595705699/artifacts/13212610870
+2026-11-03T07:21:16.2459391Z Post job cleanup.
+2026-11-03T07:21:16.3864260Z Post job cleanup.
+2026-11-03T07:21:16.4883145Z [command]/usr/bin/git version
+2026-11-03T07:21:16.4977539Z git version 2.56.0
+2026-11-03T07:21:16.5030271Z Temporarily overriding HOME='/home/runner/work/_temp/106a0604-ee96-4a6a-84e5-6fde7f23205d' before making global git config changes
+2026-11-03T07:21:16.5034578Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-03T07:21:16.5038242Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/taxonomy-evaluator/taxonomy-evaluator
+2026-11-03T07:21:16.5096490Z Removing SSH command configuration
+2026-11-03T07:21:16.5105328Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-03T07:21:16.5172559Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-03T07:21:16.5561638Z Removing HTTP extra header
+2026-11-03T07:21:16.5567908Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-03T07:21:16.5619431Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-03T07:21:16.5940458Z Removing includeIf entries pointing to credentials config files
+2026-11-03T07:21:16.5948829Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-03T07:21:16.5976570Z includeif.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git.path
+2026-11-03T07:21:16.5977787Z includeif.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git/worktrees/*.path
+2026-11-03T07:21:16.5978804Z includeif.gitdir:/github/workspace/.git.path
+2026-11-03T07:21:16.5979545Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-03T07:21:16.5987308Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git.path
+2026-11-03T07:21:16.6013040Z /home/runner/work/_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:16.6025091Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-c65e72da\-7b2f\-407b\-9751\-5ded0b301649\.config
+2026-11-03T07:21:16.6066844Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git/worktrees/*.path
+2026-11-03T07:21:16.6094088Z /home/runner/work/_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:16.6105832Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/taxonomy-evaluator/taxonomy-evaluator/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-c65e72da\-7b2f\-407b\-9751\-5ded0b301649\.config
+2026-11-03T07:21:16.6143574Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-03T07:21:16.6169111Z /github/runner_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:16.6177329Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-c65e72da\-7b2f\-407b\-9751\-5ded0b301649\.config
+2026-11-03T07:21:16.6211426Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-03T07:21:16.6235075Z /github/runner_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config
+2026-11-03T07:21:16.6243404Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-c65e72da\-7b2f\-407b\-9751\-5ded0b301649\.config
+2026-11-03T07:21:16.6280979Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-03T07:21:16.6562409Z Removing credentials config '/home/runner/work/_temp/git-credentials-c65e72da-7b2f-407b-9751-5ded0b301649.config'
+2026-11-03T07:21:16.6736483Z Cleaning up orphan processes

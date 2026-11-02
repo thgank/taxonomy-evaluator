@@ -1,0 +1,67 @@
+[
+    {
+        "Id": "sha256:4b9e4946618357be991f756f888575e244e0939d2d3f7b04a091427dc3068320",
+        "RepoTags": [
+            "taxonomy-evaluator:9da0905325cc4b1723140a1c9e20724e956b3cb1"
+        ],
+        "RepoDigests": [
+            "taxonomy-evaluator@sha256:4b9e4946618357be991f756f888575e244e0939d2d3f7b04a091427dc3068320"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-03T07:15:12.087421919Z",
+        "Config": {
+            "User": "65532:65532",
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.18",
+                "PYTHON_SHA256=abb0102e6d4ae027509bcb82327d9dd85515b44a3ba8ad538cfc5e9847029f68",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Entrypoint": [
+                "python",
+                "/app/taxonomy_evaluator.py"
+            ],
+            "Cmd": [
+                "--help"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "org.opencontainers.image.revision": "9da0905325cc4b1723140a1c9e20724e956b3cb1"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 44211013,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:44a87794b739d471ec360bec56cc0ceac640d06bbf579ee7d9061a0b88d09818",
+                "sha256:b06a5b1a9275f6ebda79d70a0fbe0a3800928d33c95b78893a4e1ab8e324cfaa",
+                "sha256:ce67d611a4fc6fe7be94f3b8040a92ae510f8839838a54b5d6bdc3bd8afef0fc",
+                "sha256:22edd123e053adb55a4ebd663d2d70d19f950d0df0fd3e7e20b5d52627f3739c",
+                "sha256:de663de15358895780d8944d6aec9322cf21612c677f5e6bf0511517c0cc4d44",
+                "sha256:4eced9a1c3c4b6522698f578a1f77c56c3d55ad0c24b3554a431cc232aa6ff90"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-03T07:15:12.13021927Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:4b9e4946618357be991f756f888575e244e0939d2d3f7b04a091427dc3068320",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "9fwj1p16fq5w2wxbrb7sm9t2s",
+                    "CreatedAt": "2026-11-03T07:15:12.142850081Z"
+                }
+            ]
+        }
+    }
+]

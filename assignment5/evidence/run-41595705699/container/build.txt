@@ -1,0 +1,55 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 330B done
+#1 DONE 0.0s
+
+#2 [auth] library/python:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+#3 DONE 0.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 102B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 10.69kB done
+#5 DONE 0.0s
+
+#6 [1/3] FROM docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+#6 resolve docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f 0.0s done
+#6 sha256:7e143ada11afde237a069ca6ba1887c691cf44e992e77da323c9139f47b8acd2 251B / 251B 0.0s done
+#6 sha256:6826f8529239b0ebfe5dd429a795c8c4989724db6ae9059fa9f03dda8c31f8f5 3.34MB / 3.34MB 0.1s done
+#6 sha256:2ed7a1a27c6d053227e15859d704914451dfa1f77792489b54ecc64103fe9db7 12.61MB / 12.61MB 0.1s done
+#6 sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 28.25MB / 28.25MB 0.2s done
+#6 extracting sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc
+#6 extracting sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 0.8s done
+#6 DONE 1.0s
+
+#6 [1/3] FROM docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+#6 extracting sha256:6826f8529239b0ebfe5dd429a795c8c4989724db6ae9059fa9f03dda8c31f8f5 0.1s done
+#6 extracting sha256:2ed7a1a27c6d053227e15859d704914451dfa1f77792489b54ecc64103fe9db7
+#6 extracting sha256:2ed7a1a27c6d053227e15859d704914451dfa1f77792489b54ecc64103fe9db7 0.3s done
+#6 DONE 1.4s
+
+#6 [1/3] FROM docker.io/library/python:3.13.18-slim-bookworm@sha256:281d39ff02e3b389401586134ff9e6572954687822a58055ec07a60ded4e0b7f
+#6 extracting sha256:7e143ada11afde237a069ca6ba1887c691cf44e992e77da323c9139f47b8acd2 done
+#6 DONE 1.4s
+
+#7 [2/3] WORKDIR /app
+#7 DONE 0.2s
+
+#8 [3/3] COPY taxonomy_evaluator.py LICENSE ./
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers 0.0s done
+#9 exporting manifest sha256:2c5c957ebeb9be116d003af1a1ccc620ade7e092978cffe4b377979e5d7c6736 done
+#9 exporting config sha256:4672d34b91b684a185eb835634dcae2fa10f1b73b48cd0d95cd3e8af95991dac done
+#9 exporting attestation manifest sha256:edab9c8466db2d8cc02775218e213b94a0c33aca3d3a1e8baaa4905882ec86f7 done
+#9 exporting manifest list sha256:32d752c800363c929a75decbad39529bc8b3e541534251aa932d9407606c5d80 done
+#9 naming to docker.io/library/taxonomy-evaluator:11d715859e23bd67b5515139f5306586e6de8302 done
+#9 unpacking to docker.io/library/taxonomy-evaluator:11d715859e23bd67b5515139f5306586e6de8302 0.0s done
+#9 DONE 0.1s

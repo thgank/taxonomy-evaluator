@@ -1,0 +1,7 @@
+baseline: exit 0 (expected 0)
+filtered: exit 0 (expected 0)
+repeat: exit 0 (expected 0)
+failed-gate: exit 1 (expected 1)
+invalid-input: exit 2 (expected 2)
+protect-input: exit 2 (expected 2)
+PASS: counts, precision/recall/F1, hashes, mounted output, byte repeatability, exits 0/1/2

@@ -1,0 +1,10 @@
+test_cli_gates_invalid_arguments_and_input_protection (test_taxonomy_evaluator.EvaluationTests.test_cli_gates_invalid_arguments_and_input_protection) ... ok
+test_empty_inputs_and_invalid_data (test_taxonomy_evaluator.EvaluationTests.test_empty_inputs_and_invalid_data) ... ok
+test_export_formats_duplicates_unicode_and_isolates (test_taxonomy_evaluator.EvaluationTests.test_export_formats_duplicates_unicode_and_isolates) ... ok
+test_graph_direction_cycles_components_and_longest_depth (test_taxonomy_evaluator.EvaluationTests.test_graph_direction_cycles_components_and_longest_depth) ... ok
+test_known_counts_and_threshold (test_taxonomy_evaluator.EvaluationTests.test_known_counts_and_threshold) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.388s
+
+OK

@@ -1,0 +1,51 @@
+AS5 EVIDENCE INDEX
+Recorded 3 November 2026. No source academic documents are republished.
+
+baseline/commit.txt, tests.log, baseline.json, filtered.json
+  Local original-code baseline, cdea93a4a96d9743d1d24cba0763b5a61e7dca36.
+local-environment.txt
+  macOS/Python/Docker client and the local daemon/launch limitation.
+base-image.json
+  Actual Docker Hub response for python:3.13.18-slim-bookworm, retrieved
+  https://hub.docker.com/v2/repositories/library/python/tags/3.13.18-slim-bookworm
+  on 3 November 2026; verifies the pinned multi-platform index digest.
+
+The following files all refer to run #5, ID 41595705699, event push, revision
+11d715859e23bd67b5515139f5306586e6de8302, branch assignment5-github-actions:
+
+run-41595705699/run.json
+  GitHub API run identity, trigger, branch, timestamps and success status.
+run-41595705699/jobs.json
+  GitHub API statuses and timings of all jobs and their steps.
+run-41595705699/tests-3.11.txt, tests-3.13.txt, tests-3.14.txt
+  Downloaded original test artifacts; 5 passing methods per interpreter.
+run-41595705699/delivery-job.txt
+  Complete authenticated GitHub API delivery job log, ANSI colors and trailing whitespace removed.
+  Source: /repos/thgank/taxonomy-evaluator/actions/jobs/125782502878/logs
+run-41595705699/container/
+  Original evidence artifact downloaded from Actions, ID 13212236545.
+  commit.txt, run.txt: actual checkout and trigger.
+  host.txt, docker-version.txt: runtime OS/architecture and versions.
+  build.txt, image.json: actual build log, image identity and revision label.
+  evaluation.json, repeat.json: identical reports generated in the same image.
+  baseline.stdout, failed-gate.stdout: original JSON outputs for both cases.
+  *.stderr: preserved output/error streams, including expected failures.
+  container-checks.txt: six container invocations and all assertions passing.
+  SHA256SUMS: hashes of the CI-generated source ZIP and Docker image archive.
+
+Screenshots in ../submission/Screenshots/ also refer to run #5 and this SHA.
+The actual delivered source/image came from artifact ID 13212610870. Their
+downloaded bytes were checked against container/SHA256SUMS before packaging.
+The image ID is recorded in image.json; an image ID is not a registry push.
+
+Other verification: report PDF counts (4 + 2), embedded Times New Roman,
+12 pt source and 1.5 spacing, all rendered pages and screenshots visually
+inspected. PDF sources are retained alongside the submission.
+
+Optional CD not performed. No local arm64 Docker result is claimed.
+
+run-41595046724/ contains the earlier successful automatic-trigger check
+(README commit 9da0905325cc4b1723140a1c9e20724e956b3cb1). Its screenshots
+are retained there. Final delivery is run #5: a packaging correction preserves
+.github/workflows/ci.yml inside the source ZIP. Every delivered source file
+was compared byte-for-byte with revision 11d7158 after download.

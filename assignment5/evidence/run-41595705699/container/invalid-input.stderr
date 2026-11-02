@@ -1,0 +1,4 @@
+usage: taxonomy_evaluator.py [-h] [--threshold THRESHOLD] [--min-f1 MIN_F1]
+                             [--output OUTPUT]
+                             predicted gold
+taxonomy_evaluator.py: error: argument --threshold: invalid unit_number value: 'nan'
