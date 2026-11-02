@@ -69,7 +69,7 @@ jobs:
       - name: Bundle the runnable tool
         run: |
           set -euo pipefail
-          python -m zipfile -c taxonomy-evaluator.zip taxonomy_evaluator.py test_taxonomy_evaluator.py README.md LICENSE examples evaluation.json Dockerfile .dockerignore scripts .github/workflows/ci.yml
+          python -m zipfile -c taxonomy-evaluator.zip taxonomy_evaluator.py test_taxonomy_evaluator.py README.md LICENSE examples evaluation.json Dockerfile .dockerignore scripts .github
           docker save "taxonomy-evaluator:$GITHUB_SHA" | gzip > taxonomy-evaluator-image.tar.gz
           sha256sum taxonomy-evaluator.zip taxonomy-evaluator-image.tar.gz > evidence/SHA256SUMS
           printf 'Validated revision: `%s`\n\nSynthetic benchmark: TP=5, FP=0, FN=1; precision=1; recall=5/6; F1=10/11.\n\nOffline container checks and exit codes 0/1/2 passed. Image and source delivered as artifacts; no server deployment.\n' "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
